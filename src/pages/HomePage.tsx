@@ -5,9 +5,9 @@ export default function HomePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const heroImages = [
-    'https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    'https://rvqtltbmdhkzgenhjnpy.supabase.co/storage/v1/object/sign/files/P6151239.ORF%20(1).jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9kNTMxMThjYy0xNWY0LTQwMTctYTM3NS00MTRkNzcxNjJlYTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmaWxlcy9QNjE1MTIzOS5PUkYgKDEpLmpwZyIsImlhdCI6MTc3MTQ5MDg2MywiZXhwIjoyNjM1NDkwODYzfQ.IUNOQd92qG_0fHJ8cYshqyozqK2mmosbEKD30lB3rxs',
+    'https://rvqtltbmdhkzgenhjnpy.supabase.co/storage/v1/object/sign/files/P6150813-EDIT%20(1).jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9kNTMxMThjYy0xNWY0LTQwMTctYTM3NS00MTRkNzcxNjJlYTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmaWxlcy9QNjE1MDgxMy1FRElUICgxKS5qcGciLCJpYXQiOjE3NzE0OTA5MDcsImV4cCI6MjYzNTQ5MDkwN30.gPhGDu115nJODxZwUjB33p323Ck_eYrt6s1wSk9OoLY',
+    'https://rvqtltbmdhkzgenhjnpy.supabase.co/storage/v1/object/sign/files/P6151205.ORF%20(1).jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9kNTMxMThjYy0xNWY0LTQwMTctYTM3NS00MTRkNzcxNjJlYTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmaWxlcy9QNjE1MTIwNS5PUkYgKDEpLmpwZyIsImlhdCI6MTc3MTQ5MTA0NywiZXhwIjoyNjM1NDkxMDQ3fQ.vTIQ04m7-RoquHYaBzaScApKLdGelp-TqjfqC2dY3g4',
   ];
 
   useEffect(() => {
@@ -87,12 +87,13 @@ export default function HomePage() {
       <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Witamy w naszym ośrodku
+            Witamy w naszym centrum
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Jesteśmy miejscem, gdzie kultura spotyka się z społecznością.
-            Organizujemy koncerty, warsztaty, zajęcia sportowe i wiele innych wydarzeń
-            dla osób w każdym wieku.
+ Jesteśmy miejscem, gdzie kultura spotyka się z{' '}
+  <strong>lokalną społecznością</strong>. Organizujemy koncerty, warsztaty,{' '}
+  <strong>spotkania autorskie</strong>, <strong>wystawy</strong>, zajęcia sportowe i wiele innych wydarzeń dla osób w każdym wieku.
+
           </p>
         </div>
 

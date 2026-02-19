@@ -13,7 +13,8 @@ export type Event = {
   image_url: string;
   category: string;
   created_at: string;
-};
+  link:string;
+};  
 
 export type RecurringClass = {
   id: string;
