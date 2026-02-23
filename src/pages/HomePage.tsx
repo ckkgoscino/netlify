@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Users, Music, Heart, Calendar } from 'lucide-react';
+import { Newspaper, BookOpen, Phone, Facebook } from 'lucide-react';
 
-export default function HomePage() {
+interface HomePageProps {
+  onNavigate?: (page: string) => void;
+}
+
+export default function HomePage({ onNavigate }: HomePageProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const heroImages = [
@@ -20,26 +24,31 @@ export default function HomePage() {
 
   const features = [
     {
-      icon: Music,
-      title: 'Koncerty',
-      description: 'Regularne występy artystów lokalnych i zaproszonych gości',
+      icon: Newspaper,
+      title: 'Aktualności'
     },
     {
-      icon: Users,
-      title: 'Spotkania',
-      description: 'Różnorodne wydarzenia społeczne i kulturalne',
+      icon: BookOpen,
+      title: 'Zajęcia'
     },
     {
-      icon: Heart,
-      title: 'Zajęcia',
-      description: 'Joga, taniec, warsztaty artystyczne i wiele więcej',
+      icon: Phone,
+      title: 'Kontakt'
     },
     {
-      icon: Calendar,
-      title: 'Cykliczne Aktywności',
-      description: 'Stałe zajęcia w naszym ośrodku',
+      icon: Facebook,
+      title: 'Media społecznościowe',
+      external: 'https://www.facebook.com/ckkgoscino',
     },
   ];
+
+  const handleClick = (feature: any) => {
+    if (feature.external) {
+      window.open(feature.external, '_blank');
+    } else if (onNavigate) {
+      onNavigate(feature.title);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -63,7 +72,7 @@ export default function HomePage() {
         <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
           <div className="max-w-4xl">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Centrum Kultury i Książki <br></br>w Gościnie
+              Centrum Kultury i Książki <br /> w Gościnie
             </h1>
             <p className="text-xl md:text-2xl text-white mb-8">
               Miejsce spotkań, przyjaźni i kultury dla wszystkich pokoleń
@@ -77,7 +86,9 @@ export default function HomePage() {
               key={index}
               onClick={() => setCurrentImageIndex(index)}
               className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentImageIndex ? 'bg-yellow-400' : 'bg-white bg-opacity-50'
+                index === currentImageIndex
+                  ? 'bg-yellow-400'
+                  : 'bg-white bg-opacity-50'
               }`}
             />
           ))}
@@ -90,10 +101,11 @@ export default function HomePage() {
             Witamy w naszym centrum
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
- Jesteśmy miejscem, gdzie kultura spotyka się z{' '}
-  <strong>lokalną społecznością</strong>. Organizujemy koncerty, warsztaty,{' '}
-  <strong>spotkania autorskie</strong>, <strong>wystawy</strong>, zajęcia sportowe i wiele innych wydarzeń dla osób w każdym wieku.
-
+            Jesteśmy miejscem, gdzie kultura spotyka się z{' '}
+            <strong>lokalną społecznością</strong>. Organizujemy koncerty,
+            warsztaty, <strong>spotkania autorskie</strong>,{' '}
+            <strong>wystawy</strong>, zajęcia sportowe i wiele innych wydarzeń
+            dla osób w każdym wieku.
           </p>
         </div>
 
@@ -101,7 +113,8 @@ export default function HomePage() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow"
+              onClick={() => handleClick(feature)}
+              className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-all cursor-pointer hover:scale-105"
             >
               <div className="flex justify-center mb-4">
                 <feature.icon className="w-12 h-12 text-yellow-400" />
@@ -109,7 +122,7 @@ export default function HomePage() {
               <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 text-center">{feature.description}</p>
+
             </div>
           ))}
         </div>

@@ -11,7 +11,7 @@ function App() {
   const renderPage = () => {
     switch (currentPage) {
       case 'Strona Główna':
-        return <HomePage />;
+        return <HomePage onNavigate={setCurrentPage} />;
       case 'Aktualności':
         return <NewsPage />;
       case 'Zajęcia':
