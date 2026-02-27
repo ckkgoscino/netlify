@@ -31,7 +31,8 @@ export default function ClassesPage() {
         .from('recurring_classes')
         .select('*')
         .eq('group_type', activeTab)
-        .order('day_of_week', { ascending: true });
+        .order('day_of_week', { ascending: true })
+        .order('created_at', { ascending: true }); // 🔥 SORTOWANIE PO created_at
 
       if (error) throw error;
       setClasses(data || []);
@@ -65,7 +66,6 @@ export default function ClassesPage() {
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* HEADER */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Zajęcia Cykliczne
@@ -75,7 +75,6 @@ export default function ClassesPage() {
           </p>
         </div>
 
-        {/* 🔥 TABS */}
         <div className="flex justify-center space-x-2 mb-10">
           <button onClick={() => setActiveTab('CKiK')} className={tabStyles('CKiK')}>
             CKiK
@@ -163,7 +162,6 @@ export default function ClassesPage() {
           </div>
         )}
 
-        {/* INFO BOX */}
         <div className="mt-12 bg-blue-50 border-l-4 border-blue-400 p-6 rounded">
           <h3 className="text-lg font-bold text-gray-900 mb-2">
             Informacje o zapisach
