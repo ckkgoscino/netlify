@@ -102,9 +102,9 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Jesteśmy miejscem, gdzie kultura spotyka się z{' '}
-            <strong>lokalną społecznością</strong>. Organizujemy koncerty,
-            warsztaty, <strong>spotkania autorskie</strong>,{' '}
-            <strong>wystawy</strong>, zajęcia sportowe i wiele innych wydarzeń
+            lokalną społecznością. <br></br>Organizujemy koncerty,
+            warsztaty, spotkania autorskie,{' '}
+            wystawy, zajęcia sportowe i wiele innych wydarzeń
             dla osób w każdym wieku.
           </p>
         </div>
