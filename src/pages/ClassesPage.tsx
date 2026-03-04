@@ -168,7 +168,7 @@ export default function ClassesPage() {
           </h3>
           <p className="text-gray-700">
             Aby zapisać się na zajęcia, skontaktuj się z nami telefonicznie
-            lub osobiście w naszym ośrodku.
+            lub osobiście w naszym centrum.
           </p>
         </div>
       </div>
